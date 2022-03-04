@@ -10,14 +10,41 @@ import random
 
 # --------------- Predefined Variables -------
 rollResults = [] # Creates a list to hold the all results of the rolls of the dice.
-diceDict = {
-    1: ('___________'
-        '|         |'
-        '|    ●    |'
-        '|         |'
-        '|_________|')
+diceDict = { # Creates the dictionary that holds the art for each value
+    1: ('___________',
+        '|         |',
+        '|    ●    |',
+        '|         |',
+        '|_________|'),
+    2: ('___________',
+        '| ●       |',
+        '|         |',
+        '|       ● |',
+        '|_________|'),
+    3: ('___________',
+        '| ●       |',
+        '|    ●    |',
+        '|       ● |',
+        '|_________|'),
+    4: ('___________',
+        '| ●     ● |',
+        '|         |',
+        '| ●     ● |',
+        '|_________|'),
+    5: ('___________',
+        '| ●     ● |',
+        '|    ●    |',
+        '| ●     ● |',
+        '|_________|'),
+    6: ('___________',
+        '| ●     ● |',
+        '| ●     ● |',
+        '| ●     ● |',
+        '|_________|'),
 }
-
+dieHeight = len(diceDict[1]) # Holds the number of rows a side of the die will take up.
+dieWidth = len(diceDict[1][0]) # Holds the number of columns requred for the side of the die. This is 11
+diceSep = ' ' # Holds white space
 # -------------------- Gather and Validate User input ---------------
 numDiceInput = int(input('How many Dice do you want to roll? [1 - 6] \n'))
 
@@ -42,3 +69,4 @@ for i in range(numDiceInput):
     rollResults.append(roll) # Add the roll to the roll results list.
 
 print(rollResults)
+print(diceDict)
